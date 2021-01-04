@@ -1,0 +1,74 @@
+<div class="container px-4">
+    <div class="row gx-20">
+        <div class="col">
+            <div class="p-3 border bg-light">
+                <h3 class="color"> Medication Tracking Calendar</h3>
+                <form [formGroup]="medicForm" (ngSubmit)="medicList()" novalidate>
+                    <div>
+                        <label for="stDate">Start Date:</label> &nbsp;
+                        <input type="date" id="stdt" formControlName="startdate">
+                    </div>
+                    <div>
+                        <label for="edDate">End Date:</label> &nbsp;&nbsp;
+                        <input type="date" id="eddt" formControlName="enddate">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" text-align="center">Check List <i
+                            class="fas fa-sign-in-alt"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="col" *ngIf="mediv">
+            <div class="p-4 border bg-light color" id="medicine">
+                <h2>Medication Data</h2>
+            </div>
+            <div *ngIf="currentMedicine">
+                <table id="medicine">
+                    <div class="p-3 border bg-light">
+                        <tr>
+                            <th></th>
+                            <th>Patient Name</th>
+                            <th>Medication Name</th>
+                            <th colspan="2">Timings</th>
+                            <th>Date Started</th>
+                            <th>Date Stopped</th>
+                            <th>Prescribing Physicion</th>
+                            <th>Already shared data</th>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td colspan="2">&nbsp;</td>
+                            <th>AM</th>
+                            <th>PM</th>
+                            <td colspan="4">&nbsp;</td>
+                        </tr>
+                        <!--<div *ngFor="let list of currentMedicine">-->
+                        <tr *ngFor="let list of currentMedicine">
+                            <td> <input type="checkbox" [(ngModel)]="list.isSelected" 
+                                (change)="getProduct(list.isSelected, list.mediid, list.patid)"> </td>
+                            <td>{{ list.patname}}</td>
+                            <td>{{ list.medicname}}</td>
+                            <td>{{ list.amtime }}</td>
+                            <td>{{ list.pmtime }}</td>
+                            <td>{{ list.startdate}}</td>
+                            <td>{{ list.enddate}}</td>
+                            <td>{{ list.presdoc }}</td>
+                            <td>{{ list.sharedflag }}</td>
+                        </tr>
+                        <!--</div>-->
+                        <br>
+                        <div>
+                            <button type="submit" (click)="shareFlag();successNotification()" class="btn btn-primary" 
+                                 text-align="center" [disabled]="!isSelected">Share list with Doctor
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
+                    </div>
+                </table>
+            </div>
+        </div>
+        <div *ngIf="nodata">
+            <div id="warning">No Data found</div>
+        </div>
+    </div>
+</div>

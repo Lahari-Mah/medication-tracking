@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare const Buffer;
 
 @Component({
   selector: 'app-root',

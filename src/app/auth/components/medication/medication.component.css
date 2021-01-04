@@ -1,0 +1,33 @@
+#medicine {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 140%;
+  }
+  
+  #medicine td, #medicine th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #medicine tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #medicine tr:hover {background-color: rgb(229, 228, 236);}
+  
+  #medicine th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4ca8af;
+    color: white;
+  }
+
+  #warning { 
+      font-family: Verdana; color: red; 
+      margin: 70px;
+    } 
+
+  .color{
+        color:rgb(11, 94, 97);
+        text-align:center;
+        font-weight: bold;
+   }

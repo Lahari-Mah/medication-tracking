@@ -1,0 +1,34 @@
+.navbar-right li a {
+    text-align: right;
+  }
+
+/* Change the link color on hover */
+#bgset a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+.color a{
+    color: #f2f2f2;
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.color a.active{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.bg{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.divsize{
+    font-size: 15px;
+}

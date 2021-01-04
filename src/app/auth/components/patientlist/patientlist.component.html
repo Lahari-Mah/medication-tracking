@@ -1,0 +1,54 @@
+<div class="list row">
+    <div class="col-md-8">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control input-lg" placeholder="Search by Patient name" [(ngModel)]="patient" 
+            size="40"/>
+        <div class="input-group-append">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="searchPatient()">
+                Search
+            </button>
+        </div>
+    </div>
+</div>
+<br>
+    <div class="col-md-6">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let patient of patients; let i = index"
+                [class.active]="i == currentIndex" (click)="setActivePatient(patient, i)">
+                {{ patient.patname }}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6" *ngIf="patmediv">
+        <table id="medicine">
+            <div class="p-3 border bg-light">
+                <h2 id="color">Patient Medication Tracking</h2>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Medication Name</th>
+                    <th colspan="2">Timings</th>
+                    <th>Date Started</th>
+                    <th>Date Stopped</th>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                    <th>AM</th>
+                    <th>PM</th>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr *ngFor="let patmedi of medicines">
+                    <td>{{ patmedi.patname}}</td>
+                    <td>{{ patmedi.medicname}}</td>
+                    <td>{{ patmedi.amtime }}</td>
+                    <td>{{ patmedi.pmtime }}</td>
+                    <td>{{ patmedi.startdate}}</td>
+                    <td>{{ patmedi.enddate}}</td>
+                </tr>
+                <br>
+            </div>
+        </table>
+    </div>
+    <div *ngIf="nodata">
+        <div id="warning">No Data found</div>
+    </div>
+</div>

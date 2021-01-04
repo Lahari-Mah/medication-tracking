@@ -1,0 +1,58 @@
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #99a2a7;
+    color: rgb(10, 10, 10);
+  }
+
+  .column {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+  
+  .title {
+    color: grey;
+  }
+
+  .move {
+    animation: move 3s;
+    -webkit-animation: move 3s;
+    font-size: 15px;
+    color: rgb(105, 103, 103);
+  }
+  
+  @keyframes move {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+              
+  @-webkit-keyframes move {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }

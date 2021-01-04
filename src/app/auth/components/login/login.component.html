@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-4">
+    <h1 id="color">Login Page</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+      <div class="mb-3">
+        <label for="loginUsername" class="form-label">Username</label>
+        <input type="text" class="form-control" required id="loginUsername" formControlName="loginUsername"
+          placeholder="Enter Username">
+          <div *ngIf="loginForm.controls.loginUsername.errors?.required">
+            <small class="text-danger">UserName is required.</small>
+          </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="loginPassword" class="form-label">Password</label>
+        <input type="password" class="form-control" id="loginPassword" formControlName="loginPassword"
+          placeholder="Enter Password">
+        <div *ngIf="loginForm.controls.loginPassword.errors?.minlength">
+        <small id="passwordHelp" class="text-danger">
+          Minimum characters be 3.
+        </small>
+      </div>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input id="patientRadio1" type="radio" class="form-check-input" value="patient" name="loginRadio"
+          formControlName="loginRadio">
+        <label class="form-check-label" for="patientRadio1">Patient</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input id="doctorRadio2" type="radio" class="form-check-input" value="doctor" name="loginRadio"
+          formControlName="loginRadio">
+        <label class="form-check-label" for="doctorRadio2">Doctor</label>
+      </div>
+      <br> <br>
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login <i
+          class="fas fa-sign-in-alt"></i>
+      </button> &nbsp; <div *ngIf="loginvalid" id="warning">{{ error.message }}</div>
+    </form>
+  </div>
+</div>

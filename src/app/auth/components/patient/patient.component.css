@@ -1,0 +1,17 @@
+.color {
+    color:rgba(12, 87, 124, 0.897);
+    text-align: center;
+}
+#capital{
+    text-transform: capitalize;
+}
+.text{
+    color:rgba(12, 87, 124, 0.897);
+    font-size: large;
+}
+#email{
+    text-transform: none;
+}
+.heading{
+    font-size: 15px;
+}

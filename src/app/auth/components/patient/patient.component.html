@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <h2 class="color">Patient Details</h2>
+    </div>
+</div>
+
+<div *ngIf="currentPatient">
+    <div class="container">
+        <div class="row" id="capital">
+            <div class="col heading">
+                <label><strong>Name:</strong></label>
+            </div>
+            <div class="col text">
+                {{ currentPatient.username }}
+            </div>
+            <div class="w-100"></div>
+            <div class="col heading">
+                <label><strong>Age:</strong></label>
+            </div>
+            <div class="col text">
+                {{ currentPatient.age }}
+            </div>
+            <div class="w-100"></div>
+            <div class="col heading">
+                <label><strong>Gender:</strong></label>
+            </div>
+            <div class="col text">
+                {{ currentPatient.gender }}
+            </div>
+            <div class="w-100"></div>
+            <div class="col heading">
+                <label><strong>Email:</strong></label>
+            </div>
+            <div class="col text" id="email">
+                {{ currentPatient.email }}
+            </div>
+            <div class="w-100"></div>
+            <div class="col heading">
+                <label><strong>Phone No:</strong></label>
+            </div>
+            <div class="col text">
+                {{ currentPatient.phno }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="container">
+    <div class="row">
+        <h2 class="color">Medication Details</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+       <app-medication></app-medication>
+    </div>
+</div>
